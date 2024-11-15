@@ -19,7 +19,7 @@
 			"type": "string",
 			"defaultValue": "https://devenvstorageacc.dfs.core.windows.net/"
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+		"myazurekeyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://MYKEYVAULT2831.vault.azure.net/"
 		},
@@ -59,8 +59,8 @@
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
-					"AzureKeyVault1_properties_typeProperties_baseUrl": {
-						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					"myazurekeyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('myazurekeyvault_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

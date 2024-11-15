@@ -19,7 +19,7 @@
 			"type": "string",
 			"defaultValue": "https://devenvstorageacc.dfs.core.windows.net/"
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+		"myazurekeyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://MYKEYVAULT2831.vault.azure.net/"
 		}
@@ -29,7 +29,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/ingest pipeline')]",
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -83,18 +83,14 @@
 							{
 								"referenceName": "DelimitedText3",
 								"type": "DatasetReference",
-								"parameters": {
-									"parameter1": "devenvstorageacc"
-								}
+								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "DelimitedText4",
 								"type": "DatasetReference",
-								"parameters": {
-									"parameter1": "devenvstorageacc"
-								}
+								"parameters": {}
 							}
 						]
 					}
@@ -102,8 +98,7 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"annotations": [],
-				"lastPublishTime": "2024-11-14T22:39:53Z"
+				"annotations": []
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]",
@@ -117,12 +112,9 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"parameter1": {
-						"type": "string",
-						"defaultValue": "devenvstorageacc"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"storageaccount": "devenvstorageacc"
 					}
 				},
 				"annotations": [],
@@ -168,12 +160,9 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"parameter1": {
-						"type": "string",
-						"defaultValue": "devenvstorageacc"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"storageaccount": "devenvstorageacc"
 					}
 				},
 				"annotations": [],
@@ -217,6 +206,11 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"storageaccount": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
@@ -230,6 +224,11 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"storageaccount": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
@@ -243,14 +242,14 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
+			"name": "[concat(parameters('factoryName'), '/myazurekeyvault')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					"baseUrl": "[parameters('myazurekeyvault_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
