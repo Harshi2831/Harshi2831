@@ -61,6 +61,11 @@
 				]
 			}
 		],
+		"parameters": {
+			"storageaccount": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-11-14T22:39:53Z"
 	},
