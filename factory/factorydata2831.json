@@ -1,0 +1,9 @@
+{
+	"name": "factorydata2831",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "42f8e250-8548-47df-9338-07c4a4bf716b",
+		"tenantId": "83d3ebc1-48f0-435e-9b65-586a8310af3b"
+	}
+}
