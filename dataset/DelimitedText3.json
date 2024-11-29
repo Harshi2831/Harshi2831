@@ -3,12 +3,9 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
-			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"parameter1": {
-				"type": "string",
-				"defaultValue": "devenvstorageacc"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storageaccount": "devenvstorageacc"
 			}
 		},
 		"annotations": [],
@@ -42,6 +39,5 @@
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

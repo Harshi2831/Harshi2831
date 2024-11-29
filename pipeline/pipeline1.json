@@ -1,5 +1,5 @@
 {
-	"name": "ingest pipeline",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
@@ -50,25 +50,17 @@
 				"inputs": [
 					{
 						"referenceName": "DelimitedText3",
-						"type": "DatasetReference",
-						"parameters": {
-							"parameter1": "devenvstorageacc"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "DelimitedText4",
-						"type": "DatasetReference",
-						"parameters": {
-							"parameter1": "devenvstorageacc"
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2024-11-14T22:39:53Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
